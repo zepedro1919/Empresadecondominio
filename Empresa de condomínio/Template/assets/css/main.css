@@ -2567,3 +2567,7 @@ ol.default li {
 .a:hover {
 	background-color: grey;
 }
+
+.alinhar li {
+	padding-left: 20px;
+}
