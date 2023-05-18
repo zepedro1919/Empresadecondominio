@@ -75,17 +75,7 @@ function checkboxToString(theField) {
 }
 
 //-------------------------------------------------------
-function validaTelemovel(tele) {
-	var regex = /^[0-9]{9}$/;
-	return regex.test(codPostal);
-}
 
-function valida() {
-	var codPostal = document.getElementById('tele').value;
-	var resultado = validaTelemovel(codPostal);
-	if (resultado) { encomendar(); }
-	else { alert('Número de telemóvel inválido'); }
-}
 function encomendar() {
 	const cliente = {};
 
