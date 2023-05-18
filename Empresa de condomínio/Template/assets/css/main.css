@@ -1992,6 +1992,7 @@ input, select, textarea {
 
 /* Large */
 
+<<<<<<< HEAD
 	@media screen and (max-width: 1280px) {
 
 		/* Basic */
@@ -2427,3 +2428,16 @@ input, select, textarea {
 			}
 
 	}
+=======
+.a:hover {
+	background-color: grey;
+}
+
+.alinhar li {
+	padding-left: 20px;
+}
+
+.proposta {
+	color: white;
+}
+>>>>>>> 8b464389ea1ff3476e03c9862c6124e38e589462
