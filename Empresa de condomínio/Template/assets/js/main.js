@@ -89,3 +89,31 @@ function encomendar() {
 	console.log(cliente);
 
 }
+
+var mapa = L.map('mapa').setView([39.3999, -8.2245], 6); // Define a posição inicial do mapa e o nível de zoom
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+	maxZoom: 18,
+}).addTo(mapa);
+
+function buscarPontosDeInteresse() {
+	var localidade = document.getElementById('localidade').value;
+
+	// Fazer uma solicitação AJAX para obter dados de pontos de interesse da localidade desejada
+	// e adicionar marcadores ao mapa
+
+	// Exemplo de código para adicionar um marcador
+	var marcador = L.marker([40.6339, -8.6599]).addTo(mapa);
+	marcador.bindPopup('Estrada do Cercal 449, 3720-511 Santiago da Riba-Ul').openPopup();
+
+	var marcador = L.marker([41.1456, -8.6110]).addTo(mapa);
+	marcador.bindPopup('R. de São Filipe de Nery, 4050-546 Porto').openPopup();
+
+	var marcador = L.marker([38.7223, -9.1393]).addTo(mapa);
+	marcador.bindPopup('Praça Marquês de Pombal, 1250-097 Lisboa').openPopup();
+
+	var marcador = L.marker([40.4168, -3.7038]).addTo(mapa);
+	marcador.bindPopup('A-4, salida 22, 28330 San Martín de la Vega, Madrid, Espanha').openPopup();
+}
+
