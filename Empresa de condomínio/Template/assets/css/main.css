@@ -2575,3 +2575,8 @@ ol.default li {
 .proposta {
 	color: white;
 }
+
+.image-container {
+	margin-left: 600px;
+	margin-top: -250px;
+}
