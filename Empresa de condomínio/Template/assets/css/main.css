@@ -2580,3 +2580,14 @@ ol.default li {
 	margin-left: 600px;
 	margin-top: -250px;
 }
+
+.imagem {
+	width: 500px;
+	height: 250px;
+	transition: transform 0.3s;
+}
+
+
+.imagem:hover {
+	transform: scale(1.2);
+}
