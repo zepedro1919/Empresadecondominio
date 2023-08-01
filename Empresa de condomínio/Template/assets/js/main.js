@@ -76,19 +76,7 @@ function checkboxToString(theField) {
 
 //-------------------------------------------------------
 
-function encomendar() {
-	const cliente = {};
 
-	cliente.nome = document.formulario.nome.value;
-	cliente.tele = document.formulario.tele.value;
-	cliente.mail = document.formulario.mail.value;
-	cliente.postal = document.formulario.postal.value;
-	cliente.predio = document.formulario.predio.value;
-	cliente.fracoes = document.formulario.fracoes.value;
-
-	console.log(cliente);
-
-}
 
 var mapa = L.map('mapa').setView([39.3999, -8.2245], 6); // Define a posição inicial do mapa e o nível de zoom
 
@@ -116,4 +104,60 @@ function buscarPontosDeInteresse() {
 	var marcador = L.marker([40.4168, -3.7038]).addTo(mapa);
 	marcador.bindPopup('A-4, salida 22, 28330 San Martín de la Vega, Madrid, Espanha').openPopup();
 }
+
+function numberonly(input) {
+	var num = /[^0-9]/g;
+	input.value = input.value.replace(num, "");
+}
+
+function lettersonly(input) {
+	var let = /[^a-zA-ZÀ-ÖØ-öø-ÿ\s]/gi;
+	input.value = input.value.replace(let, "");
+}
+
+function Email(input) {
+	var mail = /[^\S+\@\S+\.\S]/gi;
+	input.value = input.value.replace(mail, "");
+}
+
+function codpostal(input) {
+	var cod = /[^\d-]/gi;
+	input.value = input.value.replace(cod, "");
+}
+
+
+function validarFormulario() {
+	var campo1 = document.getElementById('nome').value;
+	var campo2 = document.getElementById('tele').value;
+	var campo3 = document.getElementById('mail').value;
+	var campo4 = document.getElementById('postal').value;
+	var campo5 = document.getElementById('predio').value;
+	var campo6 = document.getElementById('fracoes').value;
+
+	if (campo1 === '' || campo2 === '' || campo3 === '' || campo4 === '' || campo5 === '' || campo6 === '') {
+		alert('Por favor, preencha todos os campos!');
+		return false; // Impede o envio do formulário
+	}
+
+	// Outras validações, se necessário
+	else {
+		const cliente = {};
+
+		cliente.nome = document.formulario.nome.value;
+		cliente.tele = document.formulario.tele.value;
+		cliente.mail = document.formulario.mail.value;
+		cliente.postal = document.formulario.postal.value;
+		cliente.predio = document.formulario.predio.value;
+		cliente.fracoes = document.formulario.fracoes.value;
+
+		console.log(cliente);
+		alert("Pedido realizado com sucesso!");
+		return true;
+	} // Permite o envio do formulário
+}
+
+
+
+
+
 

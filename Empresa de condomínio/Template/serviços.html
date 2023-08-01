@@ -11,6 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script defer src="main.js"></script>
 </head>
 
 <body class="left-sidebar is-preload">
@@ -47,16 +48,17 @@
 
 
 		<form name='formulario'>
-			<h2 class="proposta">Peça-nos uma proposta</h2>
-			<input type="text" name="nome" placeholder="Nome e Apelido">
-			<input type="text" name="tele" id="tele" placeholder="Contacto telefónico">
-			<input type="text" name="mail" placeholder="E-mail">
-			<input type="text" name="postal" placeholder="Código Postal">
-			<input type="text" name="predio" placeholder="Prédio sítio em">
-			<input type="text" name="fracoes" placeholder="Nº Frações">
-			<script languague="javascript" src="main.js"></script>
+			<h2 class="proposta" style="text-align: center;">Peça-nos uma proposta</h2>
+			<input type="text" name="nome" id="nome" placeholder="Nome e Apelido" onkeyup="lettersonly(this)">
+			<input type="text" name="tele" id="tele" placeholder="Contacto telefónico" onkeyup="numberonly(this)"
+				maxlength="9">
+			<input type="text" name="mail" id="mail" placeholder="E-mail" onkeyup="Email(this)">
+			<input type="text" name="postal" id="postal" placeholder="Código Postal" onkeyup="codpostal(this)"
+				maxlength="8">
+			<input type="text" name="predio" id="predio" placeholder="Prédio sítio em" onkeyup="lettersonly(this)">
+			<input type="text" name="fracoes" id="fracoes" placeholder="Nº Frações" onkeyup="numberonly(this)">
 			<input type="reset">
-			<input type='button' value="Encomendar" onclick="encomendar()">
+			<input type='button' value="Encomendar" onclick="validarFormulario()">
 			<script language="javascript" src="main.js"></script>
 		</form>
 		<script language="javascript" src="main.js"></script>
@@ -72,19 +74,12 @@
 
 				<!-- Links -->
 				<section>
-					<h2>Filler Links</h2>
+					<h2><a href="index.html">Serviços</a></h2>
 					<ul class="divided">
-						<li><a href="#">Quam turpis feugiat dolor</a></li>
-						<li><a href="#">Amet ornare in hendrerit </a></li>
-						<li><a href="#">Semper mod quisturpis nisi</a></li>
-						<li><a href="#">Consequat etiam phasellus</a></li>
-						<li><a href="#">Amet turpis, feugiat et</a></li>
-						<li><a href="#">Ornare hendrerit lectus</a></li>
-						<li><a href="#">Semper mod quis et dolore</a></li>
-						<li><a href="#">Amet ornare in hendrerit</a></li>
-						<li><a href="#">Consequat lorem phasellus</a></li>
-						<li><a href="#">Amet turpis, feugiat amet</a></li>
-						<li><a href="#">Semper mod quisturpis</a></li>
+						<li><a href="index.html">Administração</a></li>
+						<li><a href="index.html">Manutenção</a></li>
+						<li><a href="index.html">Limpeza</a></li>
+
 					</ul>
 				</section>
 
@@ -93,68 +88,47 @@
 
 				<!-- Links -->
 				<section>
-					<h2>More Filler</h2>
+					<h2><a href="noticias.html">Notícias</a></h2>
 					<ul class="divided">
-						<li><a href="#">Quam turpis feugiat dolor</a></li>
-						<li><a href="#">Amet ornare in in lectus</a></li>
-						<li><a href="#">Semper mod sed tempus nisi</a></li>
-						<li><a href="#">Consequat etiam phasellus</a></li>
+						<li><a href="noticias.html">Rotinas que quebram a segurança: O que evitar!</a></li>
+						<li><a href="noticias.html">Regras para os condóminos de quatro patas</a></li>
+						<li><a href="noticias.html">Dicas para deixar a crise fora do condomínio</a></li>
+						<li><a href="noticias.html">Incendios: Mais vale prevenir do que remediar!</a></li>
 					</ul>
 				</section>
 
-				<!-- Links -->
-				<section>
-					<h2>Even More Filler</h2>
-					<ul class="divided">
-						<li><a href="#">Quam turpis feugiat dolor</a></li>
-						<li><a href="#">Amet ornare hendrerit lectus</a></li>
-						<li><a href="#">Semper quisturpis nisi</a></li>
-						<li><a href="#">Consequat lorem phasellus</a></li>
-					</ul>
-				</section>
 
 			</div>
 			<div class="col-6 col-12-medium imp-medium">
 
-				<!-- About -->
-				<section>
-					<h2><strong>ZeroFour</strong> by HTML5 UP</h2>
-					<p>Hi! This is <strong>ZeroFour</strong>, a free, fully responsive HTML5 site
-						template by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5
-							UP</a>.
-						It's <a href="http://html5up.net/license/">Creative Commons Attribution</a>
-						licensed so use it for any personal or commercial project (just credit us
-						for the design!).</p>
-					<a href="#" class="button alt icon solid fa-arrow-circle-right">Learn More</a>
-				</section>
 
 				<!-- Contact -->
 				<section>
-					<h2>Get in touch</h2>
+					<h2><a href="contactos.html">Contactos</a></h2>
 					<div>
 						<div class="row">
 							<div class="col-6 col-12-small">
 								<dl class="contact">
 									<dt>Twitter</dt>
-									<dd><a href="#">@untitled-corp</a></dd>
+									<dd><a href="https://twitter.com/">@JMJcondomínios</a></dd>
 									<dt>Facebook</dt>
-									<dd><a href="#">facebook.com/untitled</a></dd>
+									<dd><a href="https://www.facebook.com/">facebook.com/JMJcondomínios</a></dd>
 									<dt>WWW</dt>
-									<dd><a href="#">untitled.tld</a></dd>
+									<dd><a href="index.html">JMJcondomínios.com</a></dd>
 									<dt>Email</dt>
-									<dd><a href="#">user@untitled.tld</a></dd>
+									<dd><a href="https://mail.google.com/">JMJcondomínios@condominios.com</a></dd>
 								</dl>
 							</div>
 							<div class="col-6 col-12-small">
 								<dl class="contact">
-									<dt>Address</dt>
+									<dt>Morada</dt>
 									<dd>
-										1234 Fictional Rd<br />
-										Nashville, TN 00000-0000<br />
-										USA
+										Alameda da Boavista Edificio 26, B
+										4350-119<br />
+
 									</dd>
-									<dt>Phone</dt>
-									<dd>(000) 000-0000</dd>
+									<dt>Telefone</dt>
+									<dd>(+351) 220 927 796</dd>
 								</dl>
 							</div>
 						</div>
@@ -162,14 +136,7 @@
 				</section>
 
 			</div>
-			<div class="col-12">
-				<div id="copyright">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved</li>
-						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</div>
+
 		</div>
 	</footer>
 </div>
